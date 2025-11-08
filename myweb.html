@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Página Básica - Visual Studio Code</title>
+
+  <style>
+    :root{
+      --bg: #f5f7fb;
+      --card: #ffffff;
+      --accent: #f100bd;
+      --muted: #b9029b;
+      --radius: 12px;
+      --maxw: 1100px;
+      --gap: 1.25rem;
+      --shadow: 0 6px 18px rgba(29,31,41,0.08);
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background:linear-gradient(180deg,var(--bg),#eef2ff);
+      color:#0f172a;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding:2rem;
+      display:flex;
+      align-items:flex-start;
+      justify-content:center;
+    }
+
+    .container{
+      width:100%;
+      max-width:var(--maxw);
+      background:transparent;
+    }
+
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:var(--gap);
+      margin-bottom:1.25rem;
+    }
+
+    .brand{
+      display:flex;align-items:center;gap:.75rem;
+    }
+    .logo{
+      width:48px;height:48px;border-radius:10px;
+      background:linear-gradient(135deg,var(--accent),#77009b);
+      display:flex;align-items:center;justify-content:center;
+      color:white;font-weight:700;box-shadow:var(--shadow);
+    }
+
+    nav a{
+      margin-left:1rem;text-decoration:none;
+      color:var(--muted);font-weight:600;font-size:.95rem
+    }
+
+    .hero{
+      background:var(--card);
+      border-radius:var(--radius);
+      padding:1.5rem;
+      box-shadow:var(--shadow);
+      display:grid;grid-template-columns:1fr 340px;
+      gap:1rem;align-items:center;
+    }
+
+    .hero h1{margin:0;font-size:1.6rem}
+    .hero p{color:var(--muted);margin-top:.6rem;line-height:1.5}
+
+    /* Galería */
+    .gallery{
+      margin-top:2rem;
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+      gap:1rem;
+    }
+
+    .photo-card{
+      background:var(--card);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      overflow:hidden;
+      text-align:center;
+      padding-bottom:.8rem;
+      transition:transform 0.2s ease;
+    }
+
+    .photo-card:hover{
+      transform:scale(1.03);
+    }
+
+    .photo-card img{
+      width:100%;
+      height:150px; /* más pequeño que antes */
+      object-fit:cover;
+    }
+
+    .photo-card p{
+      margin:.5rem 0 0;
+      color:var(--muted);
+    }
+
+    .photo-card .small-text{
+      font-size:.85rem;
+      color:#9ca3af;
+      margin-top:.25rem;
+    }
+
+    footer{
+      margin-top:2rem;
+      color:var(--muted);
+      text-align:center;
+    }
+
+    @media (max-width:880px){
+      .hero{grid-template-columns:1fr;}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">VE</div>
+        <div>
+          <div style="font-weight:800">ValorEX</div>
+          <div class="muted" style="font-size:.85rem;margin-top:2px">Tienda de objetos y más</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#">Inicio</a>
+        <a href="#">Catálogo</a>
+        <a href="#">Contacto</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div>
+          <h1>Ropa popular</h1>
+          <p>Estas son algunas de nuestras prendas de ropa</p>
+        </div>
+
+        <!-- Galería de fotos -->
+        <section class="gallery">
+          <div class="photo-card">
+            <img src="60501403_o_a2.webp" alt="Foto 1">
+            <p>Chaqueta Napajiri</p>
+            <p class="small-text">180€</p>
+          </div>
+          <div class="photo-card">
+            <img src="0400021533374_BLACK.avif" alt="Foto 2">
+            <p>Chaqueta Moncler</p>
+            <p class="small-text">120€</p>
+          </div>
+          <div class="photo-card">
+            <img src="f61c25c3ce622456ea75faff897c5e3a.jpg" alt="Foto 3">
+            <p>Canada goose</p>
+            <p class="small-text">150€</p>
+          </div>
+           <div class="photo-card">
+            <img src="jd_764787_c.webp" alt="Foto 1">
+            <p>Corta vientos Lacoste</p>
+            <p class="small-text">120€</p>
+          </div>
+          <div class="photo-card">
+            <img src="c7355018d28942b1b9e557ac77670515.webp" alt="Foto 2">
+            <p>Corta vientos Nike</p>
+            <p class="small-text">120€</p>
+          </div>
+          <div class="photo-card">
+            <img src="under-armour_376506_1376795_001_20230630T091129_01.webp" alt="Foto 3">
+            <p>Corta vientos Under Armour</p>
+            <p class="small-text">100€</p>
+          </div>
+        </section>
+
+
+      <footer>
+        <p>©Copyright Alain Regol Cabrero</p>
+      </footer>
+    </main>
+  </div>
+</body>
+</html>
